@@ -34,7 +34,7 @@ export function Experience() {
       period: "2019",
       company: "Hybridsoft Limited",
       location: "Lagos, Nigeria",
-      role: "Full-Stack Web Developer (Internship)",
+      role: "Full-Stack Web Developer",
       description:
         "Contributed to multiple enterprise-level projects including restaurant management, HR systems, and CRM solutions using PHP, Laravel, and MySQL technologies.",
       achievements: [
