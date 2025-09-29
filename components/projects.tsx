@@ -1,12 +1,14 @@
 import { ExternalLink } from "lucide-react"
 import { Button } from "@/components/ui/button"
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card"
+import { url } from "inspector"
 
 export function Projects() {
   const projects = [
     {
       title: "Law Firm Web Application",
       period: "2025",
+      url:" https://github.com/Dapjzl/newdawnchambers/",
       description:
         "Full-featured web application for legal document management with secure authentication, role-based access control, and custom dashboards for different user roles.",
       technologies: ["Laravel", "PHP", "MySQL", "Tailwind CSS", "Blade Templates"],
@@ -20,6 +22,7 @@ export function Projects() {
     {
       title: "Oil & Gas Construction Services Website",
       period: "2025",
+      url: "https://jachinsgroup.com/",
       description:
         "Professional website showcasing JACHINS Development Ltd.'s expertise in oil and gas construction services, enhancing brand visibility and client engagement.",
       technologies: ["HTML", "CSS", "JavaScript", "Responsive Design"],
@@ -30,35 +33,38 @@ export function Projects() {
         "Mobile and desktop optimized interface",
       ],
     },
-    {
-      title: "Learning Management System",
+{
+      title: "Blog Management System",
       period: "2024",
+      url: "https://www.thelead360.com/",
       description:
-        "Web-based application for managing courses, students, and instructors with comprehensive admin panel and course management features.",
-      technologies: ["Laravel", "PHP", "MySQL", "Admin Dashboard"],
+        "A full-featured blog management platform for creating, scheduling, and publishing posts with SEO and author workflows.",
+      technologies: ["Laravel", "PHP", "MySQL", "Tailwind CSS", "Markdown Editor"],
       features: [
-        "Admin panel for managing categories and courses",
-        "Instructor and student management system",
-        "Course enrollment and progress tracking",
-        "Real-time data management and reporting",
+        "Rich text / Markdown editor with scheduling and drafts",
+        "Category, tag and SEO metadata management",
+        "Comments with moderation and spam protection",
+        "Role-based author/editor/admin publishing workflows",
       ],
     },
     {
-      title: "Mobile Employee Management System",
+      title: "Baraka Community and Family Centre Website",
       period: "2023",
+      url: "https://barakacentre.org/",
       description:
-        "Cloud-based system designed to replace paper-based forms with electronic management for HR teams, featuring real-time attendance tracking.",
-      technologies: ["Mobile Technologies", "Cloud Platform", "Real-time Systems"],
+        "Website for Baraka Community and Family Centre — a Scottish Charitable Incorporated Organisation (SCIO) based in West Glasgow. The site showcases services, events, community projects, and provides donation and contact channels.",
+      technologies: ["HTML", "CSS", "JavaScript", "Tailwind CSS", "Laravel", "SQL", "JQUERY"],
       features: [
-        "Electronic form management for HR processes",
-        "Real-time employee attendance system",
-        "Mobile accessibility from any smart device",
-        "Cost-effective solution for SMEs",
+        "Service and program listings with contact information",
+        "Events calendar with RSVP functionality",
+        "Donation / fundraising integration",
+        "Volunteer sign-up and enquiry forms",
       ],
     },
     {
       title: "Real Estate Management System",
       period: "2022",
+      url: "https://silverpacifichomes.com/",
       description:
         "Comprehensive platform enabling real estate businesses to control communications with consumers and publish property advertisements.",
       technologies: ["Laravel Livewire", "PHP", "MySQL"],
@@ -72,6 +78,7 @@ export function Projects() {
     {
       title: "Automobile Management System",
       period: "2022",
+      url: "https://github.com/Dapjzl/automobile-management-system",
       description:
         "Platform for car vendors to advertise and manage automobiles while performing sales transactions through the system.",
       technologies: ["Laravel", "PHP", "MySQL", "Responsive Design"],
@@ -105,9 +112,17 @@ export function Projects() {
                     <CardDescription className="text-muted-foreground mt-1">{project.period}</CardDescription>
                   </div>
                   <div className="flex gap-2">
-                    <Button variant="ghost" size="icon" className="h-8 w-8">
-                      <ExternalLink className="h-4 w-4" />
-                    </Button>
+                    {project.url ? (
+                      <Button asChild variant="ghost" size="icon" className="h-8 w-8">
+                        <a href={project.url} target="_blank" rel="noopener noreferrer" aria-label={`Open ${project.title}`}>
+                          <ExternalLink className="h-4 w-4" />
+                        </a>
+                      </Button>
+                    ) : (
+                      <Button variant="ghost" size="icon" className="h-8 w-8" disabled aria-label="No live demo">
+                        <ExternalLink className="h-4 w-4 opacity-50" />
+                      </Button>
+                    )}
                   </div>
                 </div>
               </CardHeader>

@@ -7,7 +7,7 @@ export function Hero() {
       <div className="container mx-auto grid lg:grid-cols-2 gap-12 items-center">
         <div className="space-y-8">
           <div>
-            <h1 className="text-5xl lg:text-6xl font-bold text-foreground mb-4 text-balance">Onaolapo Adedapo Emmanuel</h1>
+            <h1 className="text-5xl lg:text-6xl font-bold text-foreground mb-4 text-balance">Onaolapo <span className="text-primary font-medium">Adedapo Emmanuel</span> </h1>
             <p className="text-xl text-muted-foreground mb-6 text-pretty">
               I build scalable, high-performance backend systems and full-stack web applications using modern
               technologies like PHP( Laravel ), Node, React, and SQL databases.
