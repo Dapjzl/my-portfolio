@@ -9,7 +9,6 @@ import "./globals.css"
 export const metadata: Metadata = {
   title: "Backend Engineer Portfolio",
   description: "Full-Stack Developer specializing in Backend Engineering",
-  generator: "v0.app",
 }
 
 export default function RootLayout({
